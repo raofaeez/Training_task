@@ -1,0 +1,32 @@
+interface Worker{
+    void performDuties();
+}
+class Person{
+    String name;
+    int id;
+    Person(String n,int i){
+        name=n;id=i;
+    }
+}
+class Chef extends Person implements Worker{
+    Chef(String n,int i){
+        super(n,i);
+    }
+    public void performDuties(){
+        System.out.println("Cooking");
+    }
+}
+class Waiter extends Person implements Worker{
+    Waiter(String n,int i){
+        super(n,i);
+    }
+    public void performDuties(){
+        System.out.println("Serving");
+    }
+}
+public class Resturant{
+    public static void main(String[]args){
+        Worker w=new Chef("John",1);
+        w.performDuties();
+    }
+}
